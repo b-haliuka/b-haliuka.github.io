@@ -35,7 +35,13 @@
   .btn-primary:hover { background: var(--purple-800); }
   .hero-note { font-size: 13px; color: var(--text-faint); }
   .hero-layout { display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: start; }
-  .hero-photo { width: 260px; height: auto; border-radius: var(--radius-lg); border: 0.5px solid var(--border); display: block; }
+  .hero-photo {
+    width: 420px;
+    height: auto;
+    border-radius: var(--radius-lg);
+    border: 0.5px solid var(--border);
+    display: block;
+  }
   @media (max-width: 700px) { .hero-photo { display: none; } .hero-layout { grid-template-columns: 1fr; } }
   section { padding: 64px 0; border-bottom: 0.5px solid var(--border); }
   .section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 32px; }
@@ -84,7 +90,13 @@
   .stat-label { font-size: 11px; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 1px; }
   .about-bio { font-size: 15px; color: var(--text-muted); line-height: 1.75; margin-bottom: 20px; }
   .about-pull { background: var(--purple-50); border-left: 3px solid var(--purple-400); border-radius: 0 var(--radius) var(--radius) 0; padding: 16px 20px; font-size: 14px; color: var(--purple-900); line-height: 1.7; font-style: italic; }
-  .about-photo { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; object-position: center top; border: 3px solid var(--purple-100); }
+  .about-photo {
+    width: 300px;
+    height: auto;
+    border-radius: var(--radius-lg);
+    border: 0.5px solid var(--border);
+    display: block;
+  }
   .closing { padding: 72px 0; text-align: center; border-bottom: none; }
   .closing h2 { font-size: 28px; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px; }
   .closing p { font-size: 16px; color: var(--text-muted); margin-bottom: 28px; }
