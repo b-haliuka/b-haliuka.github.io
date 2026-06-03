@@ -10,56 +10,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --purple-50: #EEEDFE;
-    --purple-100: #CECBF6;
-    --purple-400: #7F77DD;
-    --purple-600: #534AB7;
-    --purple-800: #3C3489;
-    --purple-900: #26215C;
-    --text: #1a1a1a;
-    --text-muted: #6b6b6b;
-    --text-faint: #9a9a9a;
-    --border: rgba(0,0,0,0.1);
-    --border-strong: rgba(0,0,0,0.18);
-    --bg: #ffffff;
-    --bg-surface: #f7f6f4;
-    --radius: 10px;
-    --radius-lg: 14px;
+    --purple-50: #EEEDFE; --purple-100: #CECBF6; --purple-400: #7F77DD;
+    --purple-600: #534AB7; --purple-800: #3C3489; --purple-900: #26215C;
+    --text: #1a1a1a; --text-muted: #6b6b6b; --text-faint: #9a9a9a;
+    --border: rgba(0,0,0,0.1); --border-strong: rgba(0,0,0,0.18);
+    --bg: #ffffff; --bg-surface: #f7f6f4; --radius: 10px; --radius-lg: 14px;
   }
-
   html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'Inter', sans-serif;
-    color: var(--text);
-    background: var(--bg);
-    font-size: 16px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  .container {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
-
-  nav {
-    border-bottom: 0.5px solid var(--border);
-    padding: 16px 0;
-    position: sticky;
-    top: 0;
-    background: rgba(255,255,255,0.92);
-    backdrop-filter: blur(8px);
-    z-index: 10;
-  }
+  body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+  nav { border-bottom: 0.5px solid var(--border); padding: 16px 0; position: sticky; top: 0; background: rgba(255,255,255,0.92); backdrop-filter: blur(8px); z-index: 10; }
   .nav-inner { display: flex; justify-content: space-between; align-items: center; }
   .nav-brand { font-size: 14px; font-weight: 500; color: var(--text); text-decoration: none; }
   .nav-cta { background: var(--purple-600); color: white; border: none; border-radius: var(--radius); padding: 9px 18px; font-size: 13px; font-weight: 500; cursor: pointer; text-decoration: none; font-family: inherit; }
   .nav-cta:hover { background: var(--purple-800); }
-
   .hero { padding: 72px 0 64px; border-bottom: 0.5px solid var(--border); }
   .hero-tag { display: inline-block; background: var(--purple-50); color: var(--purple-800); font-size: 12px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 5px 12px; border-radius: 100px; margin-bottom: 24px; }
   .hero h1 { font-size: clamp(36px, 6vw, 52px); font-weight: 600; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 20px; }
@@ -69,17 +34,15 @@
   .btn-primary { background: var(--purple-600); color: white; border: none; border-radius: var(--radius); padding: 14px 26px; font-size: 15px; font-weight: 500; cursor: pointer; text-decoration: none; font-family: inherit; display: inline-flex; align-items: center; gap: 8px; }
   .btn-primary:hover { background: var(--purple-800); }
   .hero-note { font-size: 13px; color: var(--text-faint); }
-  .hero-layout { display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center; }
-  .hero-photo { width: 220px; height: 300px; object-fit: cover; object-position: center top; border-radius: var(--radius-lg); border: 0.5px solid var(--border); flex-shrink: 0; }
-
+  .hero-layout { display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: start; }
+  .hero-photo { width: 260px; height: auto; border-radius: var(--radius-lg); border: 0.5px solid var(--border); display: block; }
+  @media (max-width: 700px) { .hero-photo { display: none; } .hero-layout { grid-template-columns: 1fr; } }
   section { padding: 64px 0; border-bottom: 0.5px solid var(--border); }
   .section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 32px; }
-
   .story p { font-size: 16px; color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; }
   .story p:last-child { margin-bottom: 0; }
   .story strong { color: var(--text); font-weight: 500; }
   .story .tagline { font-size: 17px; font-weight: 500; color: var(--text); border-left: 3px solid var(--purple-400); padding-left: 16px; margin-top: 28px; margin-bottom: 0; }
-
   .packages { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
   .pkg { background: var(--bg); border: 0.5px solid var(--border-strong); border-radius: var(--radius-lg); padding: 24px; display: flex; flex-direction: column; gap: 12px; }
   .pkg.featured { border: 2px solid var(--purple-400); }
@@ -99,8 +62,7 @@
   .pkg-btn:hover { background: var(--bg-surface); }
   .pkg.featured .pkg-btn { background: var(--purple-600); color: white; border-color: transparent; }
   .pkg.featured .pkg-btn:hover { background: var(--purple-800); }
-
-  .testimonials { display: flex; flex-direction: column; gap: 16px; }
+  .testimonials { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .testimonial { background: var(--bg-surface); border-radius: var(--radius-lg); padding: 24px; border: 0.5px solid var(--border); }
   .testimonial-quote { font-size: 15px; color: var(--text-muted); line-height: 1.7; font-style: italic; margin-bottom: 16px; }
   .testimonial-author { display: flex; align-items: center; gap: 10px; }
@@ -108,14 +70,12 @@
   .testimonial-name { font-size: 13px; font-weight: 500; color: var(--text); }
   .testimonial-role { font-size: 12px; color: var(--text-faint); }
   .testimonial-placeholder .testimonial-quote { color: var(--text-faint); font-style: normal; }
-
   .steps { display: flex; flex-direction: column; gap: 0; }
   .step { display: flex; gap: 20px; padding: 20px 0; border-bottom: 0.5px solid var(--border); align-items: flex-start; }
   .step:last-child { border-bottom: none; }
   .step-num { width: 32px; height: 32px; border-radius: 50%; background: var(--purple-50); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; color: var(--purple-600); flex-shrink: 0; margin-top: 1px; }
   .step-content strong { display: block; font-size: 15px; font-weight: 500; margin-bottom: 2px; }
   .step-content p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
-
   .about-grid { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: start; }
   .about-name { font-size: 20px; font-weight: 600; margin-bottom: 4px; }
   .about-location { font-size: 13px; color: var(--text-faint); margin-bottom: 20px; }
@@ -125,24 +85,21 @@
   .about-bio { font-size: 15px; color: var(--text-muted); line-height: 1.75; margin-bottom: 20px; }
   .about-pull { background: var(--purple-50); border-left: 3px solid var(--purple-400); border-radius: 0 var(--radius) var(--radius) 0; padding: 16px 20px; font-size: 14px; color: var(--purple-900); line-height: 1.7; font-style: italic; }
   .about-photo { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; object-position: center top; border: 3px solid var(--purple-100); }
-
   .closing { padding: 72px 0; text-align: center; border-bottom: none; }
   .closing h2 { font-size: 28px; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px; }
   .closing p { font-size: 16px; color: var(--text-muted); margin-bottom: 28px; }
-
   footer { border-top: 0.5px solid var(--border); padding: 24px 0; }
   .footer-inner { display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--text-faint); flex-wrap: wrap; gap: 8px; }
   footer a { color: var(--text-muted); text-decoration: none; }
   footer a:hover { color: var(--purple-600); }
-
   @media (max-width: 600px) {
     .hero { padding: 48px 0 40px; }
-    .hero-photo { display: none; }
-    .hero-layout { grid-template-columns: 1fr; }
     .packages { grid-template-columns: 1fr; }
+    .testimonials { grid-template-columns: 1fr; }
     .about-grid { grid-template-columns: 1fr; }
     .about-photo { display: none; }
     section { padding: 48px 0; }
+    .container { padding: 0 20px; }
   }
 </style>
 </head>
@@ -185,7 +142,6 @@
   <section>
     <p class="section-label">Packages</p>
     <div class="packages">
-
       <div class="pkg">
         <div class="pkg-top"><span class="pkg-icon">🧭</span></div>
         <p class="pkg-name">Career Compass</p>
@@ -199,7 +155,6 @@
         </ul>
         <button class="pkg-btn" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdtefOEtqAboQW3n-9VqmQFCMfQDXbRw9O0qeAZv5u6bs17bg/viewform?usp=dialog','_blank')">Get started</button>
       </div>
-
       <div class="pkg featured">
         <div class="pkg-top">
           <span class="pkg-icon">🚀</span>
@@ -221,7 +176,6 @@
         </ul>
         <button class="pkg-btn" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdtefOEtqAboQW3n-9VqmQFCMfQDXbRw9O0qeAZv5u6bs17bg/viewform?usp=dialog','_blank')">Get started</button>
       </div>
-
       <div class="pkg">
         <div class="pkg-top"><span class="pkg-icon">⚡</span></div>
         <p class="pkg-name">The AI Career System</p>
@@ -235,47 +189,33 @@
         </ul>
         <button class="pkg-btn" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdtefOEtqAboQW3n-9VqmQFCMfQDXbRw9O0qeAZv5u6bs17bg/viewform?usp=dialog','_blank')">Get started</button>
       </div>
-
     </div>
   </section>
 
   <section>
     <p class="section-label">What people say</p>
     <div class="testimonials">
-
       <div class="testimonial testimonial-placeholder">
         <p class="testimonial-quote">Testimonial coming soon — add your quote here.</p>
         <div class="testimonial-author">
           <div class="testimonial-avatar">?</div>
-          <div>
-            <p class="testimonial-name">Name</p>
-            <p class="testimonial-role">Role, location</p>
-          </div>
+          <div><p class="testimonial-name">Name</p><p class="testimonial-role">Role, location</p></div>
         </div>
       </div>
-
       <div class="testimonial testimonial-placeholder">
-        <p class="testimonial-quote">Testimonial coming soon — add your quote here.</p>
+        <p class="testimonial-quote">My call with Haliuka helped me improve my CV to apply for US marketing jobs. She showed how to use Claude to improve my work. I’m at stage 3 of my interview!! Thank u so much ❤️</p>
         <div class="testimonial-author">
           <div class="testimonial-avatar">?</div>
-          <div>
-            <p class="testimonial-name">Name</p>
-            <p class="testimonial-role">Role, location</p>
-          </div>
+          <div><p class="testimonial-name">Khulan</p><p class="testimonial-role">Mongolia</p></div>
         </div>
       </div>
-
       <div class="testimonial testimonial-placeholder">
-        <p class="testimonial-quote">Testimonial coming soon — add your quote here.</p>
+        <p class="testimonial-quote">Recommend a call with Haliuka. I live in Sweden. I wanted to know what I can do in Mongolia and how much salary is. Hali shared tips, linked me with another girl and I now use claude a lot. She helped me change things for me</p>
         <div class="testimonial-author">
           <div class="testimonial-avatar">?</div>
-          <div>
-            <p class="testimonial-name">Name</p>
-            <p class="testimonial-role">Role, location</p>
-          </div>
+          <div><p class="testimonial-name">Maralgoo</p><p class="testimonial-role">Sweden</p></div>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -284,31 +224,19 @@
     <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
-        <div class="step-content">
-          <strong>Fill out the form</strong>
-          <p>Tell me your background and what you're working toward.</p>
-        </div>
+        <div class="step-content"><strong>Fill out the form</strong><p>Tell me your background and what you're working toward.</p></div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
-        <div class="step-content">
-          <strong>Get a booking link</strong>
-          <p>Once I've reviewed your form, you'll get a link to pick your session times.</p>
-        </div>
+        <div class="step-content"><strong>Get a booking link</strong><p>Once I've reviewed your form, you'll get a link to pick your session times.</p></div>
       </div>
       <div class="step">
         <div class="step-num">3</div>
-        <div class="step-content">
-          <strong>Send your CV and LinkedIn</strong>
-          <p>So I can prep before we meet.</p>
-        </div>
+        <div class="step-content"><strong>Send your CV and LinkedIn</strong><p>So I can prep before we meet.</p></div>
       </div>
       <div class="step">
         <div class="step-num">4</div>
-        <div class="step-content">
-          <strong>We meet on Google Meet</strong>
-          <p>You get notes and action items after every session.</p>
-        </div>
+        <div class="step-content"><strong>We meet on Google Meet</strong><p>You get notes and action items after every session.</p></div>
       </div>
     </div>
   </section>
@@ -320,18 +248,9 @@
         <p class="about-name">Халиун Батжаргал</p>
         <p class="about-location">Haliuka &nbsp;·&nbsp; Ulaanbaatar + Bangkok</p>
         <div class="stats-row">
-          <div>
-            <p class="stat-num">17</p>
-            <p class="stat-label">Years in Denmark</p>
-          </div>
-          <div>
-            <p class="stat-num">3</p>
-            <p class="stat-label">Countries rebuilt in</p>
-          </div>
-          <div>
-            <p class="stat-num">3</p>
-            <p class="stat-label">Business cultures</p>
-          </div>
+          <div><p class="stat-num">17</p><p class="stat-label">Years in Denmark</p></div>
+          <div><p class="stat-num">3</p><p class="stat-label">Countries rebuilt in</p></div>
+          <div><p class="stat-num">3</p><p class="stat-label">Business cultures</p></div>
         </div>
         <p class="about-bio">University of Southern Denmark graduate. Built my career from student assistant to Product Manager at a Copenhagen health-tech company. Moved back to Mongolia in 2024 and now lead Southeast Asia market strategy for AND Global, a Mongolian enterprise fintech.<br><br>I've negotiated my own salary, closed deals across three business cultures, and rebuilt my career in three countries. I know what it takes to make a real move work.</p>
         <p class="about-pull">I also know how isolating it gets when you're the only one doing it without anyone in your corner who actually gets it. I started this for us: the smart, capable Mongolians, especially the women, who are ready to move and just need a guide who knows the terrain.</p>
